@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+</head>
+<body>
+<script>
+	// //XMLHttpRequest不是node内置需安装
+	// var xhr = new XMLHttpRequest();
+	// //当请求加载成功后要调用的指定函数
+	// xhr.onload = function(){
+	// 	console.log(xhr.responseText);
+	// }
+	// xhr.open('get', 'data.json', true);
+	// xhr.send();
+
+	function get(url,callback){
+		//XMLHttpRequest不是node内置需安装
+		var xhr = new XMLHttpRequest();
+		//当请求加载成功后要调用的指定函数
+		xhr.onload = function(){
+			// console.log(xhr.responseText);
+			callback(xhr.responseText)
+		}
+		xhr.open('get', url, true);
+		xhr.send();
+	}
+
+	get('data.json',function(data){
+		console.log("data:",data)
+	})
+
+</script>
+</body>
+</html>
