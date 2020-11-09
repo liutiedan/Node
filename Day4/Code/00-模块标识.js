@@ -8,7 +8,9 @@ var fs = require('fs')
 	data/a.txt 相对于当前目录
 	/data/a.txt 绝对路径，当前文件模块所处磁盘根目录
 */
-fs.readFile('data/a.txt', function(err, data){//一种错误写法是'/data/a.txt代表从根目录里找，因为模块在D盘所以找的是D盘 'D:\data\a.txt'
+
+//一种错误写法是'/data/a.txt代表从根目录里找，因为模块在D盘所以找的是D盘 'D:\data\a.txt'
+fs.readFile('data/a.txt', function(err, data){
 
 	if(err){
 		console.log(err)
