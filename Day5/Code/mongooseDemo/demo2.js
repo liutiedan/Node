@@ -108,16 +108,16 @@ const User = mongoose.model('User',userSchema);
 // **********************
 // #region /删除数据
 // **********************
-User.remove({
-  username: 'zs'
-}, function (err, ret) {
-  if (err) {
-    console.log('删除失败')
-  } else {
-    console.log('删除成功')
-    console.log(ret)
-  }
-})
+// User.remove({
+//   username: 'zs'
+// }, function (err, ret) {
+//   if (err) {
+//     console.log('删除失败')
+//   } else {
+//     console.log('删除成功')
+//     console.log(ret)
+//   }
+// })
 // **********************
 // #endregion /删除数据
 // **********************
@@ -126,15 +126,15 @@ User.remove({
 // **********************
 // #region /更新数据
 // **********************
-// User.findByIdAndUpdate('5a001b23d219eb00c8581184', {
-//   password: '123'
-// }, function (err, ret) {
-//   if (err) {
-//     console.log('更新失败')
-//   } else {
-//     console.log('更新成功')
-//   }
-// })
+User.findByIdAndUpdate('5a001b23d219eb00c8581184', {
+  password: '123'
+}, function (err, ret) {
+  if (err) {
+    console.log('更新失败')
+  } else {
+    console.log('更新成功')
+  }
+})
 // **********************
 // #endregion /更新数据
 // **********************
