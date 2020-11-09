@@ -66,4 +66,9 @@ router.get('/students/edit', function(req, res){
 	})
 })
 
+//更新学生
+router.post('/students/edit', function(req, res){
+	
+})
+
 module.exports = router
