@@ -66,9 +66,24 @@ router.get('/students/edit', function(req, res){
 	})
 })
 
-//更新学生
+//处理编辑学生
 router.post('/students/edit', function(req, res){
-	
+	Student.updateById(req.body, function(err){
+		if(err){
+			return res.status(500).send('Server error');
+		}
+		res.redirect('/');
+	})
+})
+
+//删除学生
+router.get('/students/delete', function(req, res){
+	Student.deleteById(req.query.id, function(err){
+		if(err){
+			return res.status(500).send('Server error');
+		}
+		res.redirect('/');
+	})
 })
 
 module.exports = router
