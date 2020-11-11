@@ -10,6 +10,9 @@ var bodyParser = require('body-parser')
 
 var app = express();
 
+app.use('/public/', express.static('./public/'))
+app.use('/node_modules/', express.static('./node_modules/'))
+
 //配置express模板引擎
 app.engine('html', require('express-art-template'));
 
