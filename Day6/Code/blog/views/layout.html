@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"><!-- 只要继承了这个模板就拥有了这些样式-->
+	{{ block 'css' }}这里可以存放孩子自己的css{{ /block }}
+</head>
+<body>
+	<!--
+		只放公共部分，要改变的放在block里面
+	 -->
+	{{ include './header.html' }}
+	<h1>hello {{name}}</h1>
+	{{ block 'content' }}
+	<h1>默认内容</h1>
+	{{ /block }}
+
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+{{ block 'js' }}这里可以存放孩子自己的js{{ /block }}
+</body>
+</html>
